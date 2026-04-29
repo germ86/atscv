@@ -1,0 +1,16 @@
+\ProvidesPackage{atscv-letter}[2026/04/29 v0.1.0 Cover letter macros]
+\newcommand{\letterrecipient}[1]{\def\ltr@recipient{#1}}
+\newcommand{\lettercompany}[1]{\def\ltr@company{#1}}
+\newcommand{\letteraddress}[1]{\def\ltr@address{#1}}
+\newcommand{\letterdate}[1]{\def\ltr@date{#1}}
+\newcommand{\lettersubject}[1]{\def\ltr@subject{#1}}
+\newcommand{\letteropening}[1]{\def\ltr@opening{#1}}
+\newcommand{\letterbody}[1]{\def\ltr@body{#1}}
+\newcommand{\letterclosing}[1]{\def\ltr@closing{#1}}
+\newcommand{\lettersignature}[1]{\def\ltr@signature{#1}}
+\newcommand{\letterparagraph}[1]{#1\par}
+\newcommand{\letterimpact}[1]{\textbf{Impact:} #1\par}
+\newcommand{\letterfit}[1]{\textbf{Fit:} #1\par}
+\newcommand{\lettermotivation}[1]{\textbf{Motivation:} #1\par}
+\newcommand{\lettercta}[1]{\textbf{Next step:} #1\par}
+\newcommand{\makecoverletter}{\makecvheader\textbf{\ltr@recipient}\par\ltr@company\par\ltr@address\par\ltr@date\par\textbf{\ltr@subject}\par\ltr@opening\par\ltr@body\par\ltr@closing\par\ltr@signature\par}

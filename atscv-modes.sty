@@ -1,0 +1,17 @@
+\ProvidesPackage{atscv-modes}[2026/04/29 v0.1.0 Mode tokens]
+\RequirePackage{etoolbox}
+\newcommand{\cvNameSize}{\LARGE}
+\newcommand{\cvTitleSize}{\large}
+\newcommand{\cvSectionSize}{\Large}
+\newcommand{\cvBodySize}{\normalsize}
+\newcommand{\cvSectionSpacing}{1.0em}
+\newcommand{\cvEntrySpacing}{0.4em}
+\newcommand{\cvBulletSpacing}{0.2em}
+\newcommand{\cvDividerThickness}{0.5pt}
+\newcommand{\atscv@setmode}{%
+\ifdefstring{\atscv@mode}{executive}{\renewcommand{\cvNameSize}{\huge}\renewcommand{\cvSectionSpacing}{1.2em}}{}
+\ifdefstring{\atscv@mode}{consulting}{\renewcommand{\cvSectionSize}{\Large}}{}
+\ifdefstring{\atscv@mode}{compact}{\renewcommand{\cvSectionSpacing}{0.6em}\renewcommand{\cvEntrySpacing}{0.2em}}{}
+\ifdefstring{\atscv@mode}{ats}{\renewcommand{\cvDividerThickness}{0pt}}{}
+}
+\AtBeginDocument{\atscv@setmode}
