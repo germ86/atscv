@@ -1,0 +1,24 @@
+name: LaTeX CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-luatex texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-lang-arabic texlive-lang-cyrillic texlive-lang-cjk poppler-utils fonts-liberation ripgrep
+          sudo apt-get install -y fonts-hosny-amiri
+      - name: Run checks
+        run: |
+          bash tests/check-forbidden-patterns.sh
+          bash tests/font-check.sh
+          bash tests/compile-all.sh
+          bash tests/extract-text.sh
+          bash tests/ats-validate.sh
+          bash tests/human-scan-check.sh
+          bash tests/ctan-check.sh
