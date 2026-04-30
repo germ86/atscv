@@ -1,0 +1,36 @@
+\ProvidesPackage{atscv}[2026/04/29 v0.1.0 CV macros]
+\newcommand{\cv@name}{}\newcommand{\cv@title}{}\newcommand{\cv@email}{}\newcommand{\cv@phone}{}\newcommand{\cv@location}{}\newcommand{\cv@linkedin}{}\newcommand{\cv@orcid}{}\newcommand{\cv@doi}{}
+\newcommand{\cvname}[1]{\gdef\cv@name{#1}}
+\newcommand{\cvtitle}[1]{\gdef\cv@title{#1}}
+\newcommand{\cvemail}[1]{\gdef\cv@email{#1}}
+\newcommand{\cvphone}[1]{\gdef\cv@phone{#1}}
+\newcommand{\cvlocation}[1]{\gdef\cv@location{#1}}
+\newcommand{\cvlinkedin}[1]{\gdef\cv@linkedin{#1}}
+\newcommand{\cvorcid}[1]{\gdef\cv@orcid{#1}}
+\newcommand{\cvdoi}[1]{\gdef\cv@doi{#1}}
+\newcommand{\cvtargetrole}[1]{\def\cv@TargetRole{#1}}
+\newcommand{\cvtargetcompany}[1]{\def\cv@TargetCompany{#1}}
+\newcommand{\cvjobreference}[1]{\def\cv@JobRef{#1}}
+\newcommand{\cvapplicationdate}[1]{\def\cv@AppDate{#1}}
+\newcommand{\cvavailability}[1]{\def\cv@Availability{#1}}
+\newcommand{\cvsalaryexpectation}[1]{\def\cv@Salary{#1}}
+\newcommand{\cvworkmode}[1]{\def\cv@WorkMode{#1}}
+\newcommand{\makecvheader}{\cvNameSize\textcolor{cvPrimary}{\textbf{\cv@name}}\par \cvTitleSize\cv@title\par\normalsize \cv@email\ | \cv@phone\ | \cv@location\par \cv@linkedin\ | ORCID \cv@orcid\ | DOI \cv@doi\par\vspace{0.5em}\hrule height \cvDividerThickness\vspace{0.5em}}
+\newcommand{\cvsection}[1]{\vspace{\cvSectionSpacing}{\cvSectionSize\textcolor{cvPrimary}{#1}}\par\vspace{0.2em}}
+\newcommand{\cvprofile}[1]{#1\par}
+\newcommand{\cventry}[4]{\textbf{#1} \hfill #2\par\emph{#3}\par #4\par\vspace{\cvEntrySpacing}}
+\newcommand{\cventryfive}[5]{\cventry{#1}{#4}{#2 --- #3}{#5}}
+\newcommand{\cvachievement}[1]{\par\noindent\textbullet\ #1\par}
+\newcommand{\cvimpact}[1]{\par\noindent\textbf{Impact:} #1\par}
+\newcommand{\cvhighlight}[1]{\par\noindent\textit{#1}\par}
+\newcommand{\cvkpi}[2]{\par\noindent\textbf{#1:} #2\par}
+\newcommand{\cvskills}[1]{#1\par}
+\newcommand{\cvskillgroup}[2]{\textbf{#1:} #2\par}
+\newcommand{\cvproject}[3]{\textbf{#1} \hfill #2\par #3\par}
+\newcommand{\cvcertification}[3]{\textbf{#1} --- #2 \hfill #3\par}
+\newcommand{\cveducation}[3]{\textbf{#1} --- #2 \hfill #3\par}
+\newcommand{\cvcommunity}[3]{\textbf{#1} \hfill #2\par #3\par}
+\newcommand{\cvsetmode}[1]{}
+\newcommand{\cvsetcolorscheme}[1]{}
+\newcommand{\cvsetprofile}[1]{}
+\newcommand{\cvsetvariant}[1]{}
