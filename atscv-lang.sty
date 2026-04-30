@@ -1,0 +1,19 @@
+\ProvidesPackage{atscv-lang}[2026/04/29 v0.1.0 Language support]
+\RequirePackage{babel}
+\RequirePackage{ifthen}
+\newcommand{\headingProfile}{Profile}
+\newcommand{\headingExperience}{Experience}
+\newcommand{\headingEducation}{Education}
+\newcommand{\headingSkills}{Skills}
+\newcommand{\headingCertifications}{Certifications}
+\newcommand{\headingProjects}{Projects}
+\newcommand{\headingResearch}{Research}
+\newcommand{\headingLanguages}{Languages}
+\newcommand{\headingCommunity}{Community}
+\newcommand{\headingSummary}{Summary}
+\newcommand{\headingSelectedProjects}{Selected Projects}
+\AtBeginDocument{%
+\ifthenelse{\equal{\atscv@lang}{de}}{\renewcommand{\headingExperience}{Erfahrung}\renewcommand{\headingEducation}{Bildung}\renewcommand{\headingSkills}{Fähigkeiten}}{}
+\ifthenelse{\equal{\atscv@lang}{fr}}{\renewcommand{\headingExperience}{Expérience}\renewcommand{\headingEducation}{Formation}\renewcommand{\headingSkills}{Compétences}}{}
+\ifthenelse{\equal{\atscv@lang}{es}}{\renewcommand{\headingExperience}{Experiencia}\renewcommand{\headingEducation}{Educación}\renewcommand{\headingSkills}{Habilidades}}{}
+}

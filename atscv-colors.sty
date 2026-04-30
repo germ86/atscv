@@ -1,0 +1,29 @@
+\ProvidesPackage{atscv-colors}[2026/04/29 v0.1.0 Color schemes]
+\RequirePackage{etoolbox}
+\RequirePackage{xcolor}
+\definecolor{atsBlack}{HTML}{111111}
+\definecolor{atsBlue}{HTML}{1F4E8C}
+\definecolor{atsNavy}{HTML}{1E2E4A}
+\definecolor{atsSlate}{HTML}{44556B}
+\definecolor{atsGreen}{HTML}{1F5B42}
+\definecolor{atsTeal}{HTML}{006D6F}
+\definecolor{atsBurgundy}{HTML}{6D1F3A}
+\definecolor{atsPurple}{HTML}{4B3A8A}
+\definecolor{atsBrown}{HTML}{5E4633}
+\definecolor{atsOrange}{HTML}{9C4A00}
+\colorlet{cvPrimary}{atsBlue}\colorlet{cvAccent}{atsBlue}\colorlet{cvMuted}{black!70}
+\newcommand{\atscv@setcolors}{%
+  \ifdefstring{\atscv@colorscheme}{black}{\colorlet{cvPrimary}{atsBlack}}{}
+  \ifdefstring{\atscv@colorscheme}{blue}{\colorlet{cvPrimary}{atsBlue}}{}
+  \ifdefstring{\atscv@colorscheme}{navy}{\colorlet{cvPrimary}{atsNavy}}{}
+  \ifdefstring{\atscv@colorscheme}{slate}{\colorlet{cvPrimary}{atsSlate}}{}
+  \ifdefstring{\atscv@colorscheme}{green}{\colorlet{cvPrimary}{atsGreen}}{}
+  \ifdefstring{\atscv@colorscheme}{teal}{\colorlet{cvPrimary}{atsTeal}}{}
+  \ifdefstring{\atscv@colorscheme}{burgundy}{\colorlet{cvPrimary}{atsBurgundy}}{}
+  \ifdefstring{\atscv@colorscheme}{purple}{\colorlet{cvPrimary}{atsPurple}}{}
+  \ifdefstring{\atscv@colorscheme}{brown}{\colorlet{cvPrimary}{atsBrown}}{}
+  \ifdefstring{\atscv@colorscheme}{orange}{\colorlet{cvPrimary}{atsOrange}}{}
+  \colorlet{cvAccent}{cvPrimary}
+  \ifdefstring{\atscv@mode}{ats}{\colorlet{cvPrimary}{atsBlack}\colorlet{cvAccent}{atsBlack}}{}
+}
+\AtBeginDocument{\atscv@setcolors}
